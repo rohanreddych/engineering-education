@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/deploying-nodejs-web-app/
 title: Deploying Your First Node.js Web App
-description: This guide provides an introduction to Node.js and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
+description: This guide will walk you through how to deploy a Node.js web app to DigitalOcean.
 author: louise-findlay
 date: 2020-07-15T00:00:00-10:00
 topics: [Node.js]
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/deploying-nodejs-web-app/hero.jpeg
     alt: header image nodejs
 ---
-You’ve finished developing your first Node.js web app and now you want to publish it on the web. This guide will walk you through how to get a basic Express server running to serve static web files. *Note: If you’re still in the development process, then you may find my [Node.js guide](/engineering-education/static-site-dynamic-nodejs-web-app/) helpful.*
+You’ve finished developing your first Node.js web app and now you want to publish it on the web. This guide will walk you through how to deploy a Node.js web app to DigitalOcean. *Note: If you’re still in the development process, then you may find my [Node.js guide](/engineering-education/static-site-dynamic-nodejs-web-app/) helpful.*
 
 <!--more-->
 ### Deploying Your First Node.js Web App
@@ -26,8 +26,6 @@ There are many hosting platforms you can use to deploy your Node.js web apps suc
 First, create an account on the DigitalOcean platform. There are discount codes available to add free credit to your account such as the code available in the Github Student Developer Pack. Be aware that you can only redeem one code per account.
 
 Second, you need to create a droplet. A droplet is a VPS (Virtual Private Server.) It’s similar to a Linux VM which is hosted on a server farm somewhere. Once you’ve logged into your account, go to droplets under the Manage heading and click create and then droplets.
-
-![DigitalOcean Droplet Creation](/engineering-education/deploying-nodejs-web-app/digitalocean-creation.png)
 
 You can leave most of the settings as the default but change the plan to the basic $5 a month which contains enough resources for your app. You can scale this up later if needed.
 
