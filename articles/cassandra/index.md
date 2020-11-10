@@ -12,3 +12,6 @@ There are different types of NoSQL databases.
 
 You can read about these in detail [here](https://www.mongodb.com/scale/types-of-nosql-databases). SQL and NoSQL databases have their [advantages and disadvantages](https://www.ibm.com/cloud/blog/sql-vs-nosql), this article only focusses on the advatages of using Cassandra as a NoSQL database.
 
+## Casandra 2
+
+Casandra is distributed 
