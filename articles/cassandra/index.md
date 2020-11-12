@@ -15,3 +15,4 @@ You can read about these in detail [here](https://www.mongodb.com/scale/types-of
 ## Casandra 2
 
 Casandra is distributed 
+ sdf
