@@ -5,6 +5,12 @@
 Cassandra is a distributed database, it can run on multiple machines while appearing to the user as a single node. Cassandra really shines when it is used on multiple-machines, because it is optimized for high performance across
 multiple data-center racks and even multiple data-centers across the globe. In other databases as you scale, some nodes need to be setup as primary nodes and some as secondary replicas, Cassandra is decentralized so there is no concept of primary and secondary, every node is identical. Decentralization is pretty useful as it is easy to use than primary-secondary and there is no single point of failure. Scalability is a feature of a system where it can serve more requests without a degradation in performance. Cassandra offers elastic scalability where we can scale up or scale down seamlessly without restarting the processes or much diturbance.    
 
+Line about nosql
+
+## Installing Cassandra
+
+Follow the guide [here](https://cassandra.apache.org/doc/latest/getting_started/installing.html)
+
 
 ## When to use cassandra?
 
@@ -21,3 +27,7 @@ Cassandra is optimized for increasing the thoroughput on writes. Applications wh
 - Multiple Data Centers
 
 Cassandra has out-of-the box support for geographical distribution of data. Cassandra can be easily configured for multiple data centers.
+
+
+## Architecture
+
