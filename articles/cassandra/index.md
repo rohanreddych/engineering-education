@@ -31,3 +31,8 @@ Cassandra has out-of-the box support for geographical distribution of data. Cass
 
 ## Architecture
 
+## CQL
+
+## Application development with Cassandra
+
+## Conclusion
