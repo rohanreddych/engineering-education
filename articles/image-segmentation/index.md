@@ -75,8 +75,9 @@
   If we look at the binarised image, it does an almost perfect job. The limitation with otsu's method is it needs a bimodal image for doing a perfect job of segmentation. A bimodal image is, when you draw the histogram of intensities of pixels then you should get two peaks. If you get two peaks, then the midpoint of those is a good threshold. 
 
 
-  ## 
+## Segmentation using clustering
 
-  ## References 
-  - http://homes.di.unimi.it/ferrari/ImgProc2011_12/EI2011_12_16_segmentation_double.pdf
-  - https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html
+
+## References 
+ - http://homes.di.unimi.it/ferrari/ImgProc2011_12/EI2011_12_16_segmentation_double.pdf
+ - https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html
