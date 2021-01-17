@@ -74,10 +74,73 @@
 
   If we look at the binarised image, it does an almost perfect job. The limitation with otsu's method is it needs a bimodal image for doing a perfect job of segmentation. A bimodal image is, when you draw the histogram of intensities of pixels then you should get two peaks. If you get two peaks, then the midpoint of those is a good threshold. 
 
+## Edge Detection for Image Segmentation
+
+An Edge is a boundary between two homogenous regions. Edge detection is a process of finding boundaries of objects within an image. The boundaries are characterized by immediate change in the intensity of pixels. We use the discontinuities in the image to get image segments. Classical edge detection algorithms involve [Convolving](https://en.wikipedia.org/wiki/Convolution) an image with an operator. An operator is a two dimensional matrix, which is constructed such that it is aware of large gradients in the image but returns zero for uniform regions. Operators can be optimised to look for edges in the vertical, horizontal and diagonal orientation. 
+
+### Sobel Edge Detection
+
+In Sobel method, we calculate the gradient in the horizontal direction and vertical direction; and then we can get the approximation of gradient at a point by combining vertical and horizontal gradient. 
+
+![xaxis](sobel_x.png)
+
+![yaxis](sobel_y.png)
+
+![total](sobel_add.png)
+
+```python
+import cv2
+img = cv2.imread("image.jpg",0)
+scale = 1
+delta = 0
+ddepth = cv2.CV_16S
+
+grad_x = cv2.Sobel(img, ddepth, 1, 0, ksize=3, scale=scale, delta=delta, borderType=cv2.BORDER_DEFAULT)
+grad_y = cv2.Sobel(img, ddepth,0,1,ksize=3, scale=scale, delta=delta, borderType=cv2.BORDER_DEFAULT)
+
+abs_grad_x = cv2.convertScaleAbs(grad_x)
+abs_grad_y = cv2.convertScaleAbs(grad_y)
+
+grad = cv2.addWeighted(abs_grad_x, 0.5, abs_grad_y, 0.5, 0)
+plt.imshow(grad,'gray')
+plt.show()
+```
+
+![sobel_img](sobel_orig.png)
+
+![gradient](sobel_grad.png)
+
+
+### Canny Edge Detection
+
+Canny edge detection is a popular and efficient edge detection algorithm. The algorithm for Canny :
+
+1. Noise Reduction. Edge detection is a difficult task in noisy images, we can reduce the noise in an image by convolving the image with a Gaussian filter.
+2. Calculating Gradient Magnitude and Direction. We calculate the gradient of intensity using the same operations as the Sobel method above. We also need to calculate the direction for each pixel. 
+
+$Angle(\theta) = \arctan(G_y / G_x)$
+
+3. Non Maximal Supression. Pixels which are not edge pixels are removed from the image. This is done by checking if a pixel is the local maxima in its neighbourhood in the direction of the gradient. We get finer/thin edges from this step.
+
+4. Thresholding. We use two threshold values, minVal and maxVal. Any edges with intensity gradient more than maxVal are sure to be edges and those below minVal are sure to be non-edges, so discarded. Those who lie between these two thresholds are classified edges or non-edges based on their connectivity. If they are connected to “sure-edge” pixels, they are considered to be part of edges. Otherwise, they are also discarded.
+
+```
+import cv2
+
+```
+
+![img]()
+
+image segmentation using  
 
 ## Segmentation using clustering
 
+## Image Segmentation using machine learning
 
+
+Image segmentation is an important step in image analysis, the results of processes like image classification depend on how good image segmentation is done. Image Segmentation is used in a wide variety of applications like Aeriel Image Analysis, Land use calculation, Cancer research, etc. Only a few methods haave been discussed in this article, for the latest reasearch in this field please check out . 
 ## References 
  - http://homes.di.unimi.it/ferrari/ImgProc2011_12/EI2011_12_16_segmentation_double.pdf
  - https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html
+ - http://airccse.org/journal/jcsit/1211csit20.pdf
+ - https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_canny/py_canny.html
