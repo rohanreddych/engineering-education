@@ -126,16 +126,38 @@ $Angle(\theta) = \arctan(G_y / G_x)$
 
 ```
 import cv2
+from matplotlib import pyplot as plt
+
+image = cv2.imread("image_name.jpg",0)
+edges = cv2.Canny(image,100,200)
+plt.imshow(edges,'gray')
+plt.show()
+```
+
+![img]()
+
+![img]()
+
+
+## Segmentation using clustering
+
+[Clustering](https://en.wikipedia.org/wiki/Cluster_analysis) algorithms are used to divide data into groups such that data points in a group are more similar to each other, than those in other groups. Image Segmentation can be imagined as clustering, where we would like to represent an image as clusters of pixels. Lets implement using [K-Means Clustering algorithm](http://section.io/engineering-education/k-means-from-scratch-r/) which is a popular clustering algorithm. K-Means clustering algorithm is fast and simple, and it is highly efficient and scalable for large data sets.
+
+```python
+from sklearn
 
 ```
 
 ![img]()
 
-image segmentation using  
+![img]()
 
-## Segmentation using clustering
+There is no set rule on how to select the "K" in K-means algorithm. Although there are [algorithms for selecting optimal K](https://medium.com/analytics-vidhya/how-to-determine-the-optimal-k-for-k-means-708505d204eb), it would be a hassle if we have to do this for every image.
 
 ## Image Segmentation using machine learning
+
+Deep learning can learn patterns in images to predict objects that make up the image. There are several architectures which can be used for image segmentatoin, lets use [convolution neural network](https://www.section.io/engineering-education/basics-of-convolution-neural-networks/) based architecture to do image segmentation. 
+
 
 
 Image segmentation is an important step in image analysis, the results of processes like image classification depend on how good image segmentation is done. Image Segmentation is used in a wide variety of applications like Aeriel Image Analysis, Land use calculation, Cancer research, etc. Only a few methods haave been discussed in this article, for the latest reasearch in this field please check out . 
