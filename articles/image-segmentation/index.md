@@ -158,7 +158,7 @@ There is no set rule on how to select the "K" in K-means algorithm. Although the
 
 Deep learning can learn patterns in images to predict objects that make up the image. There are several architectures which can be used for image segmentatoin, lets use [convolution neural network](https://www.section.io/engineering-education/basics-of-convolution-neural-networks/) based architecture to do image segmentation. 
 
-
+A lot of data is needed for training a good quality image segmentation model.
 
 Image segmentation is an important step in image analysis, the results of processes like image classification depend on how good image segmentation is done. Image Segmentation is used in a wide variety of applications like Aeriel Image Analysis, Land use calculation, Cancer research, etc. Only a few methods haave been discussed in this article, for the latest reasearch in this field please check out . 
 ## References 
